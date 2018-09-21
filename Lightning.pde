@@ -1,23 +1,30 @@
-int Color= (int)Math.random()*30+226;
-int startX=500;
-int startY=500;
+int startX=0;
+int startY=150;
 int endX=0;
-int endY=0;
+int endY=150;
 void setup()
 {
-  size(300,300);
-  size(1000,1000);
-  background(0);
-  strokeWeight(10);
+size(300,300);
+background(0);
+strokeWeight(5);
 }
 void draw()
 {
- stroke(Color);
-  endX=startX+(int)Math.random();
-  while (startX<1000)
+stroke((int)(Math.random()*256-230));
+while (endX<1000)
+
+{
+endY=startY+(int)(Math.random()*20-9);
+endX=startX+(int)(Math.random()*10);
+line(startX,startY,endX,endY);
+startX=endX;
+startY=endY;
+}
 }
 void mousePressed()
 {
-
+startX=0;
+startY=(int)(Math.random()*50+100);
+endX=0;
+endY=0;
 }
-
